@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>StudyMap - Faculty Notes</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f7fb;
+    color:#222;
+}
+
+/* NAVBAR */
+
+nav{
+    background:white;
+    padding:18px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#3157d5;
+}
+
+.navlinks a{
+    text-decoration:none;
+    color:#444;
+    margin-left:30px;
+    font-size:15px;
+}
+
+.navlinks a:hover{
+    color:#3157d5;
+}
+
+
+/* BREADCRUMB */
+
+.breadcrumb{
+    padding:25px 8%;
+    color:#777;
+    font-size:14px;
+}
+
+.breadcrumb a{
+    color:#3157d5;
+    text-decoration:none;
+}
+
+
+/* MAIN */
+
+.main{
+    width:84%;
+    margin:auto;
+}
+
+
+/* TOP HEADER */
+
+.note-header{
+    background:linear-gradient(135deg,#3157d5,#7138c8);
+    color:white;
+    padding:40px;
+    border-radius:20px;
+    margin-bottom:30px;
+}
+
+.note-header h1{
+    font-size:36px;
+    margin:12px 0;
+}
+
+.note-header p{
+    max-width:750px;
+    line-height:1.6;
+}
+
+.tag{
+    display:inline-block;
+    background:rgba(255,255,255,0.2);
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+
+/* CONTENT AREA */
+
+.content{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+}
+
+
+/* NOTES */
+
+.notes{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.07);
+}
+
+.notes h2{
+    color:#3157d5;
+    margin-top:0;
+}
+
+.notes h3{
+    margin-top:30px;
+}
+
+.notes p{
+    line-height:1.7;
+    color:#555;
+}
+
+.notes ul{
+    line-height:1.9;
+    color:#555;
+}
+
+
+/* CODE BOX */
+
+.code{
+    background:#17213c;
+    color:white;
+    padding:20px;
+    border-radius:12px;
+    font-family:"Courier New", monospace;
+    line-height:1.7;
+    overflow:auto;
+}
+
+
+/* HIGHLIGHT */
+
+.highlight{
+    background:#eef2ff;
+    padding:18px;
+    border-left:5px solid #3157d5;
+    margin:20px 0;
+    line-height:1.6;
+}
+
+
+/* SIDEBAR */
+
+.sidebar{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.side-card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.07);
+}
+
+.side-card h3{
+    margin-top:0;
+}
+
+.side-card p{
+    color:#666;
+    line-height:1.5;
+}
+
+.topic-list a{
+    display:block;
+    padding:10px;
+    margin:5px 0;
+    text-decoration:none;
+    color:#444;
+    border-radius:8px;
+}
+
+.topic-list a:hover{
+    background:#eef2ff;
+    color:#3157d5;
+}
+
+
+/* BUTTONS */
+
+.button{
+    display:inline-block;
+    padding:11px 18px;
+    background:#3157d5;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    margin-top:10px;
+    cursor:pointer;
+}
+
+.button:hover{
+    background:#2445b5;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:35px;
+    color:#777;
+    font-size:14px;
+    margin-top:40px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    nav{
+        padding:18px 25px;
+    }
+
+    .navlinks a{
+        margin-left:10px;
+    }
+
+    .main{
+        width:90%;
+    }
+
+    .content{
+        grid-template-columns:1fr;
+    }
+
+    .note-header h1{
+        font-size:28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        StudyMap
+    </div>
+
+    <div class="navlinks">
+
+        <a href="index.html">Home</a>
+
+        <a href="explore_p2.html">Explore</a>
+
+        <a href="syllabus_p3.html">Syllabus</a>
+
+        <a href="dashboard_p6.html">Dashboard</a>
+
+    </div>
+
+</nav>
+
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb">
+
+    <a href="syllabus_p3.html">Syllabus</a>
+    &nbsp;›&nbsp;
+
+    <a href="subject_p4.html">Programming</a>
+    &nbsp;›&nbsp;
+
+    <a href="topic_p5.html">Variables and Data Types</a>
+    &nbsp;›&nbsp;
+
+    Faculty Notes
+
+</div>
+
+
+<div class="main">
+
+
+<!-- HEADER -->
+
+<div class="note-header">
+
+    <span class="tag">
+        UNIT 01 • PROGRAMMING
+    </span>
+
+    <h1>Variables and Data Types</h1>
+
+    <p>
+        Faculty Notes
+        <br>
+        Understand the basic concept of variables
+        and the different types of data used in programming.
+    </p>
+
+</div>
+
+
+<!-- CONTENT -->
+
+<div class="content">
+
+
+<!-- NOTES -->
+
+<div class="notes">
+
+    <h2>📘 Faculty Notes</h2>
+
+    <p>
+        In programming, we often need to store information
+        such as names, numbers and marks. A variable is used
+        to store this information so that it can be used later
+        in a program.
+    </p>
+
+
+    <h3>1. What is a Variable?</h3>
+
+    <p>
+        A variable is a named location used to store a value
+        in a program. The value stored in a variable can be
+        used or changed during program execution.
+    </p>
+
+    <div class="highlight">
+
+        <b>Example:</b>
+
+        <br><br>
+
+        age = 18
+
+        <br><br>
+
+        Here, <b>age</b> is the variable and
+        <b>18</b> is the value stored in it.
+
+    </div>
+
+
+    <h3>2. What is a Data Type?</h3>
+
+    <p>
+        A data type specifies the kind of value that a variable
+        can store. Different types of information require
+        different data types.
+    </p>
+
+
+    <h3>3. Common Data Types</h3>
+
+    <ul>
+
+        <li>
+            <b>Integer:</b> Used for whole numbers.
+            Example: 10, 25, 100
+        </li>
+
+        <li>
+            <b>Float:</b> Used for decimal numbers.
+            Example: 10.5, 25.75
+        </li>
+
+        <li>
+            <b>String:</b> Used for text.
+            Example: "Hello"
+        </li>
+
+        <li>
+            <b>Boolean:</b> Represents True or False.
+        </li>
+
+    </ul>
+
+
+    <h3>4. Example Program</h3>
+
+    <div class="code">
+
+name = "Student"<br>
+age = 18<br>
+marks = 85.5<br>
+passed = True<br><br>
+
+print(name)<br>
+print(age)<br>
+print(marks)<br>
+print(passed)
+
+    </div>
+
+
+    <h3>5. Why are Variables Important?</h3>
+
+    <ul>
+
+        <li>They store information in a program.</li>
+
+        <li>They make programs easier to understand.</li>
+
+        <li>The stored values can be used multiple times.</li>
+
+        <li>The value of a variable can be changed when required.</li>
+
+    </ul>
+
+
+    <h3>6. Quick Summary</h3>
+
+    <div class="highlight">
+
+        <b>Variable</b> → Stores a value.
+
+        <br><br>
+
+        <b>Data Type</b> → Defines the type of value.
+
+        <br><br>
+
+        <b>Integer</b> → Whole number.
+
+        <br><br>
+
+        <b>Float</b> → Decimal number.
+
+        <br><br>
+
+        <b>String</b> → Text.
+
+        <br><br>
+
+        <b>Boolean</b> → True or False.
+
+    </div>
+
+
+    <a href="resources_p7.html" class="button">
+        ← Back to Resources
+    </a>
+
+</div>
+
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+
+    <!-- NOTE INFORMATION -->
+
+    <div class="side-card">
+
+        <h3>📋 Note Information</h3>
+
+        <p>
+            <b>Subject:</b><br>
+            Programming
+        </p>
+
+        <p>
+            <b>Unit:</b><br>
+            Unit 01
+        </p>
+
+        <p>
+            <b>Topic:</b><br>
+            Variables and Data Types
+        </p>
+
+        <p>
+            <b>Reading Time:</b><br>
+            10 minutes
+        </p>
+
+    </div>
+
+
+    <!-- TOPIC NAVIGATION -->
+
+    <div class="side-card">
+
+        <h3>📚 Unit Topics</h3>
+
+        <div class="topic-list">
+
+            <a href="#">
+                Introduction to Programming
+            </a>
+
+            <a href="#">
+                Variables and Data Types ✓
+            </a>
+
+            <a href="#">
+                Operators
+            </a>
+
+            <a href="#">
+                Input and Output
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- STUDY TIP -->
+
+    <div class="side-card">
+
+        <h3>💡 Study Tip</h3>
+
+        <p>
+            Read the faculty notes once before class.
+            During the lecture, focus on understanding
+            the examples instead of trying to learn
+            everything from the beginning.
+        </p>
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+<!-- BOTTOM -->
+
+<div class="side-card" style="margin-top:25px;">
+
+    <h2>Ready to test yourself?</h2>
+
+    <p>
+        Once you understand the topic, move to the
+        practice section and check how well you
+        remember the concepts.
+    </p>
+
+    <a href="topic_p5.html" class="button">
+        Go to Practice →
+    </a>
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    StudyMap • B.Sc. Computer Science
+
+    <br><br>
+
+    Study smarter. Know what's next.
+
+</footer>
+
+
+<script type="text/javascript">
+
+function noteMessage()
+{
+    alert("Faculty Notes are ready for study.");
+}
+
+</script>
+
+
+</body>
+
+</html>

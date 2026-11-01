@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>StudyMap - Syllabus</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #172033;
+}
+
+
+/* NAVBAR */
+
+nav {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #315bea;
+}
+
+nav a {
+    text-decoration: none;
+    color: #172033;
+    margin-left: 35px;
+    font-size: 16px;
+    position: relative;
+}
+
+nav a:hover {
+    color: #315bea;
+}
+
+
+/* MAIN */
+
+.main {
+    width: 86%;
+    margin: auto;
+    padding: 40px 0 60px;
+}
+
+
+/* PAGE INTRO */
+
+.intro {
+    margin-bottom: 35px;
+}
+
+.small-heading {
+    color: #7048e8;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.intro h1 {
+    font-size: 43px;
+    margin: 12px 0;
+}
+
+.intro p {
+    color: #697386;
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 650px;
+}
+
+
+/* SEMESTER SELECTOR */
+
+.semester-area {
+    background-color: white;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    margin-bottom: 30px;
+}
+
+.semester-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.semester-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.semester-button {
+    padding: 11px 22px;
+    border: 1px solid #dce1ed;
+    background-color: white;
+    color: #172033;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.semester-button:hover {
+    border-color: #315bea;
+    color: #315bea;
+}
+
+.semester-button.active {
+    background-color: #315bea;
+    color: white;
+    border-color: #315bea;
+}
+
+
+/* SEMESTER MESSAGE */
+
+.semester-message {
+    margin-top: 22px;
+    padding: 15px 18px;
+    background-color: #f1f4ff;
+    border-radius: 10px;
+    color: #315bea;
+    font-size: 14px;
+}
+
+
+/* SUBJECT SECTION */
+
+.subject-heading {
+    margin: 35px 0 20px;
+}
+
+.subject-heading h2 {
+    margin: 0;
+    font-size: 27px;
+}
+
+.subject-heading p {
+    color: #7b8494;
+    margin-top: 7px;
+}
+
+
+/* SUBJECT GRID */
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* SUBJECT CARD */
+
+.subject-card {
+    background-color: white;
+    padding: 27px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.subject-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(49,91,234,0.12);
+}
+
+.subject-card:after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #f0f3ff;
+    right: -35px;
+    top: -35px;
+}
+
+
+/* SUBJECT NUMBER */
+
+.subject-number {
+    color: #315bea;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.subject-card h3 {
+    font-size: 22px;
+    margin: 10px 0 7px;
+}
+
+.subject-card p {
+    color: #7b8494;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* UNIT TAGS */
+
+.units {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 18px;
+}
+
+.unit-tag {
+    background-color: #f2f4fa;
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #596579;
+}
+
+
+/* SUBJECT FOOTER */
+
+.subject-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 22px;
+    border-top: 1px solid #edf0f5;
+    padding-top: 17px;
+}
+
+.progress-text {
+    font-size: 12px;
+    color: #7b8494;
+}
+
+.progress-bar {
+    width: 100px;
+    height: 6px;
+    background-color: #edf0f7;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #315bea, #7048e8);
+    border-radius: 10px;
+}
+
+.view {
+    color: #315bea;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* STUDY TIP */
+
+.study-tip {
+    margin-top: 35px;
+    background-color: #172033;
+    color: white;
+    padding: 30px;
+    border-radius: 18px;
+}
+
+.study-tip h2 {
+    margin-top: 0;
+}
+
+.study-tip p {
+    color: #b8c0cf;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    color: #7b8494;
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 800px) {
+
+    nav {
+        padding: 0 25px;
+    }
+
+    nav a {
+        margin-left: 12px;
+    }
+
+    .main {
+        width: 90%;
+    }
+
+    .subject-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro h1 {
+        font-size: 35px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        StudyMap
+    </div>
+
+    <div>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="explore_p2.html">
+            Why StudyMap?
+        </a>
+
+        <a href="syllabus_p3.html">
+            Syllabus
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+
+    <!-- INTRO -->
+
+    <div class="intro">
+
+        <div class="small-heading">
+            YOUR ACADEMIC ROADMAP
+        </div>
+
+        <h1>
+            Follow the syllabus.<br>
+            Know your path.
+        </h1>
+
+        <p>
+            Select your semester to explore your subjects,
+            units and topics. StudyMap keeps your learning
+            journey organised around your syllabus.
+        </p>
+
+    </div>
+
+
+
+    <!-- SEMESTER SELECTOR -->
+
+    <div class="semester-area">
+
+        <div class="semester-title">
+            Select Semester
+        </div>
+
+
+        <div class="semester-buttons">
+
+            <button class="semester-button active"
+            onclick="changeSemester(1, this)">
+                Semester 01
+            </button>
+
+            <button class="semester-button"
+            onclick="changeSemester(2, this)">
+                Semester 02
+            </button>
+
+            <button class="semester-button"
+            onclick="changeSemester(3, this)">
+                Semester 03
+            </button>
+
+            <button class="semester-button"
+            onclick="changeSemester(4, this)">
+                Semester 04
+            </button>
+
+        </div>
+
+
+        <div class="semester-message" id="semesterMessage">
+
+            Currently viewing Semester 01
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SUBJECTS -->
+
+    <div class="subject-heading">
+
+        <h2>
+            Semester 01 Subjects
+        </h2>
+
+        <p>
+            Choose a subject to explore its complete learning roadmap.
+        </p>
+
+    </div>
+
+
+
+    <div class="subject-grid">
+
+
+        <!-- SUBJECT 01 -->
+
+        <div class="subject-card"
+        onclick="openSubject('Programming')">
+
+            <div class="subject-number">
+                SUBJECT 01
+            </div>
+
+            <h3>
+                Programming
+            </h3>
+
+            <p>
+                Learn programming concepts, logic,
+                functions and problem solving step by step.
+            </p>
+
+
+            <div class="units">
+
+                <div class="unit-tag">
+                    Unit 01
+                </div>
+
+                <div class="unit-tag">
+                    Unit 02
+                </div>
+
+                <div class="unit-tag">
+                    Unit 03
+                </div>
+
+                <div class="unit-tag">
+                    Unit 04
+                </div>
+
+            </div>
+
+
+            <div class="subject-footer">
+
+                <div>
+
+                    <div class="progress-text">
+                        Progress: 18%
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress"
+                        style="width:18%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="view">
+                    View Subject →
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SUBJECT 02 -->
+
+        <div class="subject-card"
+        onclick="openSubject('Mathematics')">
+
+            <div class="subject-number">
+                SUBJECT 02
+            </div>
+
+            <h3>
+                Mathematics
+            </h3>
+
+            <p>
+                Organise mathematical concepts,
+                formulas and problem-solving topics.
+            </p>
+
+
+            <div class="units">
+
+                <div class="unit-tag">
+                    Unit 01
+                </div>
+
+                <div class="unit-tag">
+                    Unit 02
+                </div>
+
+                <div class="unit-tag">
+                    Unit 03
+                </div>
+
+                <div class="unit-tag">
+                    Unit 04
+                </div>
+
+            </div>
+
+
+            <div class="subject-footer">
+
+                <div>
+
+                    <div class="progress-text">
+                        Progress: 10%
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress"
+                        style="width:10%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="view">
+                    View Subject →
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SUBJECT 03 -->
+
+        <div class="subject-card"
+        onclick="openSubject('Computer Fundamentals')">
+
+            <div class="subject-number">
+                SUBJECT 03
+            </div>
+
+            <h3>
+                Computer Fundamentals
+            </h3>
+
+            <p>
+                Understand the basic concepts of computers,
+                hardware, software and operating systems.
+            </p>
+
+
+            <div class="units">
+
+                <div class="unit-tag">
+                    Unit 01
+                </div>
+
+                <div class="unit-tag">
+                    Unit 02
+                </div>
+
+                <div class="unit-tag">
+                    Unit 03
+                </div>
+
+                <div class="unit-tag">
+                    Unit 04
+                </div>
+
+            </div>
+
+
+            <div class="subject-footer">
+
+                <div>
+
+                    <div class="progress-text">
+                        Progress: 25%
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress"
+                        style="width:25%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="view">
+                    View Subject →
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SUBJECT 04 -->
+
+        <div class="subject-card"
+        onclick="openSubject('Web Technology')">
+
+            <div class="subject-number">
+                SUBJECT 04
+            </div>
+
+            <h3>
+                Web Technology
+            </h3>
+
+            <p>
+                Explore web page structure, styling,
+                scripting and basic web development.
+            </p>
+
+
+            <div class="units">
+
+                <div class="unit-tag">
+                    Unit 01
+                </div>
+
+                <div class="unit-tag">
+                    Unit 02
+                </div>
+
+                <div class="unit-tag">
+                    Unit 03
+                </div>
+
+                <div class="unit-tag">
+                    Unit 04
+                </div>
+
+            </div>
+
+
+            <div class="subject-footer">
+
+                <div>
+
+                    <div class="progress-text">
+                        Progress: 5%
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress"
+                        style="width:5%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="view">
+                    View Subject →
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- STUDY TIP -->
+
+    <div class="study-tip">
+
+        <h2>
+            Start with what comes next.
+        </h2>
+
+        <p>
+            You don't have to wait until a topic is taught in class.
+            Choose a subject, pick a topic and start preparing
+            before your lecture.
+        </p>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    StudyMap &nbsp; | &nbsp; B.Sc. Computer Science
+
+</footer>
+
+
+
+<script type="text/javascript">
+
+
+/* CHANGE SEMESTER */
+
+function changeSemester(number, button)
+{
+
+    var buttons = document.getElementsByClassName("semester-button");
+
+    for(var i = 0; i < buttons.length; i++)
+    {
+        buttons[i].classList.remove("active");
+    }
+
+    button.classList.add("active");
+
+
+    var message = document.getElementById("semesterMessage");
+
+    message.innerHTML =
+    "Currently viewing Semester 0" + number;
+
+
+    if(number != 1)
+    {
+        alert("Semester " + number +
+        " structure will be added here.");
+    }
+
+}
+
+
+/* OPEN SUBJECT */
+
+function openSubject(subjectName)
+{
+    window.location.href = "subject_p4.html";
+}
+
+
+</script>
+
+
+</body>
+
+</html>

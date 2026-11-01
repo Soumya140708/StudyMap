@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>StudyMap - B.Sc. Computer Science</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #172033;
+    overflow-x: hidden;
+}
+
+
+/* NAVBAR */
+
+nav {
+    height: 102px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+    background-color: white;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #315bea;
+}
+
+nav a {
+    text-decoration: none;
+    color: #172033;
+    margin-left: 38px;
+    font-size: 16px;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #315bea;
+}
+
+
+/* underline animation */
+
+nav a:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #315bea;
+    left: 0;
+    bottom: -7px;
+    transition: 0.3s;
+}
+
+nav a:hover:after {
+    width: 100%;
+}
+
+
+/* MAIN AREA */
+
+.main {
+    min-height: calc(100vh - 102px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 65px 7%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* BACKGROUND CIRCLES */
+
+.circle1 {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #dfe6ff, #eee9ff);
+    top: -130px;
+    right: -80px;
+    z-index: 0;
+    animation: float 5s infinite ease-in-out;
+}
+
+.circle2 {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e8edff, #f4eaff);
+    bottom: -100px;
+    left: -70px;
+    z-index: 0;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(18px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+
+/* LEFT SIDE */
+
+.left {
+    width: 52%;
+    position: relative;
+    z-index: 2;
+    animation: slideLeft 1s ease;
+}
+
+@keyframes slideLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+.tag {
+    color: #7048e8;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+
+h1 {
+    font-size: 60px;
+    margin: 17px 0;
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.highlight {
+    color: #315bea;
+}
+
+
+/* DESCRIPTION */
+
+.description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #596579;
+    max-width: 600px;
+}
+
+
+/* BUTTONS */
+
+.buttons {
+    margin-top: 32px;
+}
+
+.start {
+    background-color: #315bea;
+    color: white;
+    border: none;
+    padding: 15px 28px;
+    border-radius: 9px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 12px;
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(49,91,234,0.22);
+}
+
+.start:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(49,91,234,0.30);
+}
+
+
+.explore {
+    background-color: white;
+    color: #315bea;
+    border: 1px solid #315bea;
+    padding: 14px 28px;
+    border-radius: 9px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.explore:hover {
+    background-color: #eef2ff;
+    transform: translateY(-3px);
+}
+
+
+/* RIGHT SIDE */
+
+.right {
+    width: 43%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    animation: slideRight 1s ease;
+}
+
+@keyframes slideRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* STUDY CARD */
+
+.study-card {
+    width: 450px;
+    background-color: white;
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(49,91,234,0.13);
+    position: relative;
+    transition: 0.4s;
+}
+
+.study-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 25px 60px rgba(49,91,234,0.18);
+}
+
+
+.card-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+/* PROGRESS */
+
+.progress-text {
+    font-size: 13px;
+    color: #7b8494;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 6px;
+    background-color: #edf0f7;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 25%;
+    background: linear-gradient(90deg, #315bea, #7048e8);
+    border-radius: 10px;
+}
+
+
+/* STEPS */
+
+.step {
+    display: flex;
+    align-items: center;
+    margin: 18px 0;
+    padding: 9px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+
+.step:hover {
+    background-color: #f5f7ff;
+    transform: translateX(7px);
+}
+
+
+/* NUMBER */
+
+.number {
+    width: 42px;
+    height: 42px;
+    background-color: #eef1ff;
+    color: #315bea;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 16px;
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.step:hover .number {
+    background-color: #315bea;
+    color: white;
+    transform: scale(1.08);
+}
+
+
+/* STEP TEXT */
+
+.step-text {
+    font-size: 16px;
+}
+
+.step-text span {
+    display: block;
+    color: #7b8494;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+
+/* SMALL BADGE */
+
+.badge {
+    position: absolute;
+    top: -13px;
+    right: 20px;
+    background-color: #eef1ff;
+    color: #315bea;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 18px;
+    color: #7b8494;
+    font-size: 13px;
+    background-color: white;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 900px) {
+
+    nav {
+        padding: 0 30px;
+    }
+
+    nav a {
+        margin-left: 15px;
+    }
+
+    .main {
+        flex-direction: column;
+        padding: 60px 30px;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .right {
+        margin-top: 50px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        StudyMap
+    </div>
+
+    <div>
+
+        <a href="index.html">Home</a>
+
+        <a href="explore_p2.html">
+            Why StudyMap?
+        </a>
+
+        <a href="syllabus_p3.html">
+            Syllabus
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- MAIN SECTION -->
+
+<section class="main">
+
+
+    <!-- BACKGROUND DECORATION -->
+
+    <div class="circle1"></div>
+
+    <div class="circle2"></div>
+
+
+
+    <!-- LEFT CONTENT -->
+
+    <div class="left">
+
+        <div class="tag">
+            B.Sc. COMPUTER SCIENCE
+        </div>
+
+
+        <h1>
+
+            Study smarter.<br>
+
+            Know what's
+            <span class="highlight">
+                next.
+            </span>
+
+        </h1>
+
+
+        <p class="description">
+
+            A structured study platform that helps students
+            follow their syllabus, prepare before class and
+            keep their learning resources in one place.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <button class="start"
+            onclick="openSyllabus()">
+
+                Start Learning →
+
+            </button>
+
+
+            <button class="explore"
+            onclick="openExplore()">
+
+                Explore StudyMap
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- RIGHT STUDY PATH -->
+
+    <div class="right">
+
+        <div class="study-card">
+
+
+            <div class="badge">
+                YOUR LEARNING PATH
+            </div>
+
+
+            <div class="card-title">
+                Your Study Path
+            </div>
+
+
+            <div class="progress-text">
+                Your journey starts here
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div class="progress"></div>
+
+            </div>
+
+
+
+            <!-- STEP 1 -->
+
+            <div class="step"
+            onclick="stepMessage(1)">
+
+                <div class="number">
+                    01
+                </div>
+
+                <div class="step-text">
+
+                    Choose your semester
+
+                    <span>
+                        Follow your academic structure
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 2 -->
+
+            <div class="step"
+            onclick="stepMessage(2)">
+
+                <div class="number">
+                    02
+                </div>
+
+                <div class="step-text">
+
+                    Select a subject
+
+                    <span>
+                        Explore units and topics
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 3 -->
+
+            <div class="step"
+            onclick="stepMessage(3)">
+
+                <div class="number">
+                    03
+                </div>
+
+                <div class="step-text">
+
+                    Pick a topic
+
+                    <span>
+                        Prepare before your lecture
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 4 -->
+
+            <div class="step"
+            onclick="stepMessage(4)">
+
+                <div class="number">
+                    04
+                </div>
+
+                <div class="step-text">
+
+                    Learn & revise
+
+                    <span>
+                        Access everything in one place
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    StudyMap &nbsp; | &nbsp; B.Sc. Computer Science
+
+</footer>
+
+
+
+<script type="text/javascript">
+
+
+function openSyllabus()
+{
+    window.location.href = "syllabus_p3.html";
+}
+
+
+function openExplore()
+{
+    window.location.href = "explore_p2.html";
+}
+
+
+function stepMessage(step)
+{
+
+    if(step == 1)
+    {
+        alert("Choose your semester to begin your StudyMap journey.");
+    }
+
+    else if(step == 2)
+    {
+        alert("Select a subject and explore its complete learning path.");
+    }
+
+    else if(step == 3)
+    {
+        alert("Pick a topic and prepare yourself before the lecture.");
+    }
+
+    else
+    {
+        alert("Learn, practice and revise everything from one place.");
+    }
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>StudyMap - Programming</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #172033;
+}
+
+
+/* NAVBAR */
+
+nav {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #315bea;
+}
+
+nav a {
+    text-decoration: none;
+    color: #172033;
+    margin-left: 35px;
+    font-size: 16px;
+    position: relative;
+}
+
+nav a:hover {
+    color: #315bea;
+}
+
+
+/* MAIN */
+
+.main {
+    width: 86%;
+    margin: auto;
+    padding: 35px 0 60px;
+}
+
+
+/* BREADCRUMB */
+
+.breadcrumb {
+    font-size: 14px;
+    color: #7b8494;
+    margin-bottom: 25px;
+}
+
+.breadcrumb a {
+    color: #315bea;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+
+/* SUBJECT HEADER */
+
+.subject-header {
+    background: linear-gradient(135deg, #315bea, #7048e8);
+    color: white;
+    border-radius: 22px;
+    padding: 35px 40px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.subject-header:after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.08);
+    right: -50px;
+    top: -80px;
+}
+
+.subject-label {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    opacity: 0.85;
+}
+
+.subject-header h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.subject-header p {
+    font-size: 16px;
+    margin: 0;
+    opacity: 0.9;
+}
+
+
+/* SUBJECT INFO */
+
+.info {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.info-box {
+    background-color: rgba(255,255,255,0.15);
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+
+/* SECTION TITLE */
+
+.section-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.section-title p {
+    color: #7b8494;
+    margin-top: 7px;
+}
+
+
+/* UNITS */
+
+.unit {
+    background-color: white;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    padding: 25px 28px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.unit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(49,91,234,0.10);
+}
+
+
+/* UNIT HEADER */
+
+.unit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.unit-number {
+    color: #315bea;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.unit h3 {
+    margin: 7px 0 0;
+    font-size: 21px;
+}
+
+.unit-description {
+    color: #7b8494;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+
+/* PROGRESS */
+
+.unit-progress {
+    text-align: right;
+}
+
+.progress-number {
+    color: #315bea;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.progress-bar {
+    width: 100px;
+    height: 6px;
+    background-color: #edf0f7;
+    border-radius: 10px;
+    margin-top: 7px;
+}
+
+.progress {
+    height: 100%;
+    width: 30%;
+    background: linear-gradient(90deg, #315bea, #7048e8);
+    border-radius: 10px;
+}
+
+
+/* TOPICS */
+
+.topics {
+    margin-top: 22px;
+    border-top: 1px solid #edf0f5;
+    padding-top: 15px;
+}
+
+.topic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 15px;
+    border-radius: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.topic:hover {
+    background-color: #f3f5ff;
+    transform: translateX(5px);
+}
+
+.topic-name {
+    font-size: 15px;
+}
+
+.topic-arrow {
+    color: #315bea;
+    font-size: 18px;
+}
+
+
+/* STUDY TIP */
+
+.study-tip {
+    margin-top: 35px;
+    padding: 30px;
+    background-color: #172033;
+    color: white;
+    border-radius: 18px;
+}
+
+.study-tip h2 {
+    margin-top: 0;
+}
+
+.study-tip p {
+    color: #b8c0cf;
+    line-height: 1.6;
+}
+
+.tip-button {
+    background-color: #315bea;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.tip-button:hover {
+    background-color: #4a6df0;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    color: #7b8494;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 800px) {
+
+    nav {
+        padding: 0 25px;
+    }
+
+    nav a {
+        margin-left: 12px;
+    }
+
+    .main {
+        width: 90%;
+    }
+
+    .subject-header h1 {
+        font-size: 34px;
+    }
+
+    .unit-header {
+        display: block;
+    }
+
+    .unit-progress {
+        text-align: left;
+        margin-top: 15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        StudyMap
+    </div>
+
+    <div>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="explore_p2.html">
+            Why StudyMap?
+        </a>
+
+        <a href="syllabus_p3.html">
+            Syllabus
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+
+    <!-- BREADCRUMB -->
+
+    <div class="breadcrumb">
+
+        <a href="syllabus_p3.html">
+            Syllabus
+        </a>
+
+        &nbsp; / &nbsp;
+
+        Semester 01
+
+        &nbsp; / &nbsp;
+
+        Programming
+
+    </div>
+
+
+
+    <!-- SUBJECT HEADER -->
+
+    <div class="subject-header">
+
+        <div class="subject-label">
+            SEMESTER 01
+        </div>
+
+        <h1>
+            Programming
+        </h1>
+
+        <p>
+            Follow the complete subject roadmap and learn topic by topic.
+        </p>
+
+
+        <div class="info">
+
+            <div class="info-box">
+                4 Units
+            </div>
+
+            <div class="info-box">
+                16 Topics
+            </div>
+
+            <div class="info-box">
+                18% Completed
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ROADMAP -->
+
+    <div class="section-title">
+
+        <h2>
+            Subject Roadmap
+        </h2>
+
+        <p>
+            Explore each unit and choose a topic to begin learning.
+        </p>
+
+    </div>
+
+
+
+    <!-- UNIT 01 -->
+
+    <div class="unit">
+
+        <div class="unit-header">
+
+            <div>
+
+                <div class="unit-number">
+                    UNIT 01
+                </div>
+
+                <h3>
+                    Programming Basics
+                </h3>
+
+                <div class="unit-description">
+                    Understand the basic concepts of programming.
+                </div>
+
+            </div>
+
+
+            <div class="unit-progress">
+
+                <div class="progress-number">
+                    30%
+                </div>
+
+                <div class="progress-bar">
+
+                    <div class="progress">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="topics">
+
+            <div class="topic"
+            onclick="openTopic('Introduction to Programming')">
+
+                <div class="topic-name">
+                    Introduction to Programming
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="topic"
+            onclick="openTopic('Variables and Data Types')">
+
+                <div class="topic-name">
+                    Variables and Data Types
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="topic"
+            onclick="openTopic('Operators')">
+
+                <div class="topic-name">
+                    Operators
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="topic"
+            onclick="openTopic('Input and Output')">
+
+                <div class="topic-name">
+                    Input and Output
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- UNIT 02 -->
+
+    <div class="unit">
+
+        <div class="unit-header">
+
+            <div>
+
+                <div class="unit-number">
+                    UNIT 02
+                </div>
+
+                <h3>
+                    Control Structures
+                </h3>
+
+                <div class="unit-description">
+                    Learn how programs make decisions and repeat tasks.
+                </div>
+
+            </div>
+
+
+            <div class="unit-progress">
+
+                <div class="progress-number">
+                    20%
+                </div>
+
+                <div class="progress-bar">
+
+                    <div class="progress"
+                    style="width:20%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="topics">
+
+            <div class="topic"
+            onclick="openTopic('If-Else Statements')">
+
+                <div class="topic-name">
+                    If-Else Statements
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="topic"
+            onclick="openTopic('Nested If')">
+
+                <div class="topic-name">
+                    Nested If
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="topic"
+            onclick="openTopic('Loops')">
+
+                <div class="topic-name">
+                    Loops
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="topic"
+            onclick="openTopic('Switch Case')">
+
+                <div class="topic-name">
+                    Switch Case
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- UNIT 03 -->
+
+    <div class="unit">
+
+        <div class="unit-header">
+
+            <div>
+
+                <div class="unit-number">
+                    UNIT 03
+                </div>
+
+                <h3>
+                    Functions
+                </h3>
+
+                <div class="unit-description">
+                    Learn how functions organize and reuse code.
+                </div>
+
+            </div>
+
+
+            <div class="unit-progress">
+
+                <div class="progress-number">
+                    10%
+                </div>
+
+                <div class="progress-bar">
+
+                    <div class="progress"
+                    style="width:10%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="topics">
+
+            <div class="topic"
+            onclick="openTopic('Introduction to Functions')">
+
+                <div class="topic-name">
+                    Introduction to Functions
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="topic"
+            onclick="openTopic('Function Arguments')">
+
+                <div class="topic-name">
+                    Function Arguments
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="topic"
+            onclick="openTopic('Return Values')">
+
+                <div class="topic-name">
+                    Return Values
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="topic"
+            onclick="openTopic('Lambda Functions')">
+
+                <div class="topic-name">
+                    Lambda Functions
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- UNIT 04 -->
+
+    <div class="unit">
+
+        <div class="unit-header">
+
+            <div>
+
+                <div class="unit-number">
+                    UNIT 04
+                </div>
+
+                <h3>
+                    Problem Solving
+                </h3>
+
+                <div class="unit-description">
+                    Apply programming concepts to solve problems.
+                </div>
+
+            </div>
+
+
+            <div class="unit-progress">
+
+                <div class="progress-number">
+                    0%
+                </div>
+
+                <div class="progress-bar">
+
+                    <div class="progress"
+                    style="width:0%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="topics">
+
+            <div class="topic"
+            onclick="openTopic('Algorithms')">
+
+                <div class="topic-name">
+                    Algorithms
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="topic"
+            onclick="openTopic('Flowcharts')">
+
+                <div class="topic-name">
+                    Flowcharts
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="topic"
+            onclick="openTopic('Problem Analysis')">
+
+                <div class="topic-name">
+                    Problem Analysis
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="topic"
+            onclick="openTopic('Programming Practice')">
+
+                <div class="topic-name">
+                    Programming Practice
+                </div>
+
+                <div class="topic-arrow">
+                    →
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- STUDY TIP -->
+
+    <div class="study-tip">
+
+        <h2>
+            Don't know where to begin?
+        </h2>
+
+        <p>
+            Start with the first topic of Unit 01.
+            Build your understanding step by step
+            instead of trying to study everything at once.
+        </p>
+
+        <button class="tip-button"
+        onclick="startLearning()">
+
+            Start with Unit 01 →
+
+        </button>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    StudyMap &nbsp; | &nbsp; B.Sc. Computer Science
+
+</footer>
+
+
+
+<script type="text/javascript">
+
+
+function openTopic(topicName)
+{
+    window.location.href = "topic_p5.html";
+}
+
+function startLearning()
+{
+    alert("Start with Introduction to Programming.");
+}
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>StudyMap - My Progress</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f7fb;
+    color:#222;
+}
+
+/* NAVBAR */
+
+nav{
+    background:white;
+    padding:18px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#3157d5;
+}
+
+.navlinks a{
+    text-decoration:none;
+    color:#444;
+    margin-left:30px;
+    font-size:15px;
+}
+
+.navlinks a:hover{
+    color:#3157d5;
+}
+
+
+/* BREADCRUMB */
+
+.breadcrumb{
+    padding:25px 8%;
+    color:#777;
+    font-size:14px;
+}
+
+
+/* MAIN */
+
+.main{
+    width:84%;
+    margin:auto;
+}
+
+
+/* HEADER */
+
+.progress-header{
+    background:linear-gradient(135deg,#3157d5,#7138c8);
+    color:white;
+    padding:40px;
+    border-radius:20px;
+    margin-bottom:30px;
+}
+
+.progress-header h1{
+    font-size:36px;
+    margin:12px 0;
+}
+
+.progress-header p{
+    max-width:700px;
+    line-height:1.6;
+}
+
+
+/* OVERALL */
+
+.overall{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.07);
+    margin-bottom:25px;
+}
+
+.overall h2{
+    color:#3157d5;
+    margin-top:0;
+}
+
+.big-progress{
+    height:18px;
+    background:#e5e8f0;
+    border-radius:20px;
+    overflow:hidden;
+    margin:20px 0;
+}
+
+.big-bar{
+    height:100%;
+    width:42%;
+    background:#3157d5;
+}
+
+.overall-text{
+    display:flex;
+    justify-content:space-between;
+    color:#666;
+}
+
+
+/* SUBJECT GRID */
+
+.subject-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.subject-card{
+    background:white;
+    padding:25px;
+    border-radius:17px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.07);
+}
+
+.subject-card h2{
+    margin-top:0;
+}
+
+.subject-card p{
+    color:#666;
+}
+
+.progress-line{
+    height:10px;
+    background:#e5e8f0;
+    border-radius:20px;
+    margin:15px 0;
+}
+
+.progress-fill{
+    height:100%;
+    background:#3157d5;
+    border-radius:20px;
+}
+
+.progress-info{
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+    color:#666;
+}
+
+
+/* ACTIVITY */
+
+.activity{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.07);
+    margin-top:25px;
+}
+
+.activity h2{
+    color:#3157d5;
+}
+
+.activity-item{
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+.activity-item:last-child{
+    border-bottom:none;
+}
+
+.activity-item b{
+    display:block;
+    margin-bottom:5px;
+}
+
+.activity-item span{
+    color:#777;
+    font-size:14px;
+}
+
+
+/* ACHIEVEMENT */
+
+.achievement{
+    margin-top:25px;
+    background:#17213c;
+    color:white;
+    padding:30px;
+    border-radius:18px;
+}
+
+.achievement h2{
+    margin-top:0;
+}
+
+.achievement p{
+    color:#d7dbea;
+    line-height:1.6;
+}
+
+
+/* BUTTON */
+
+.button{
+    display:inline-block;
+    background:#3157d5;
+    color:white;
+    padding:11px 18px;
+    text-decoration:none;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+.button:hover{
+    background:#2445b5;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:35px;
+    color:#777;
+    font-size:14px;
+    margin-top:30px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    nav{
+        padding:18px 25px;
+    }
+
+    .navlinks a{
+        margin-left:10px;
+    }
+
+    .main{
+        width:90%;
+    }
+
+    .subject-grid{
+        grid-template-columns:1fr;
+    }
+
+    .progress-header h1{
+        font-size:28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        StudyMap
+    </div>
+
+    <div class="navlinks">
+
+        <a href="index.html">Home</a>
+
+        <a href="explore_p2.html">Explore</a>
+
+        <a href="syllabus_p3.html">Syllabus</a>
+
+        <a href="dashboard_p6.html">Dashboard</a>
+
+    </div>
+
+</nav>
+
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb">
+
+    Home &nbsp;›&nbsp; My Progress
+
+</div>
+
+
+<div class="main">
+
+
+<!-- HEADER -->
+
+<div class="progress-header">
+
+    <h1>📈 My Progress</h1>
+
+    <p>
+        Keep track of what you have studied,
+        what you are currently learning and
+        what is still left to complete.
+    </p>
+
+</div>
+
+
+<!-- OVERALL PROGRESS -->
+
+<div class="overall">
+
+    <h2>Overall Progress</h2>
+
+    <p>
+        You have completed <b>42%</b> of your
+        current study plan.
+    </p>
+
+    <div class="big-progress">
+
+        <div class="big-bar"></div>
+
+    </div>
+
+    <div class="overall-text">
+
+        <span>12 Topics Completed</span>
+
+        <span>42%</span>
+
+    </div>
+
+</div>
+
+
+<!-- SUBJECT PROGRESS -->
+
+<div class="subject-grid">
+
+
+    <!-- PROGRAMMING -->
+
+    <div class="subject-card">
+
+        <h2>💻 Programming</h2>
+
+        <p>
+            6 of 12 topics completed
+        </p>
+
+        <div class="progress-line">
+
+            <div class="progress-fill"
+                 style="width:50%;">
+            </div>
+
+        </div>
+
+        <div class="progress-info">
+
+            <span>50% Complete</span>
+
+            <span>6 / 12</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- MATHEMATICS -->
+
+    <div class="subject-card">
+
+        <h2>📐 Mathematics</h2>
+
+        <p>
+            3 of 12 topics completed
+        </p>
+
+        <div class="progress-line">
+
+            <div class="progress-fill"
+                 style="width:25%;">
+            </div>
+
+        </div>
+
+        <div class="progress-info">
+
+            <span>25% Complete</span>
+
+            <span>3 / 12</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- COMPUTER FUNDAMENTALS -->
+
+    <div class="subject-card">
+
+        <h2>🖥️ Computer Fundamentals</h2>
+
+        <p>
+            2 of 10 topics completed
+        </p>
+
+        <div class="progress-line">
+
+            <div class="progress-fill"
+                 style="width:20%;">
+            </div>
+
+        </div>
+
+        <div class="progress-info">
+
+            <span>20% Complete</span>
+
+            <span>2 / 10</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- WEB TECHNOLOGY -->
+
+    <div class="subject-card">
+
+        <h2>🌐 Web Technology</h2>
+
+        <p>
+            1 of 10 topics completed
+        </p>
+
+        <div class="progress-line">
+
+            <div class="progress-fill"
+                 style="width:10%;">
+            </div>
+
+        </div>
+
+        <div class="progress-info">
+
+            <span>10% Complete</span>
+
+            <span>1 / 10</span>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- RECENT ACTIVITY -->
+
+<div class="activity">
+
+    <h2>🕒 Recent Activity</h2>
+
+
+    <div class="activity-item">
+
+        <b>Variables and Data Types</b>
+
+        <span>
+            Completed Faculty Notes • Programming
+        </span>
+
+    </div>
+
+
+    <div class="activity-item">
+
+        <b>Introduction to Programming</b>
+
+        <span>
+            Topic completed • Programming
+        </span>
+
+    </div>
+
+
+    <div class="activity-item">
+
+        <b>Variables and Data Types Practice</b>
+
+        <span>
+            Score: 4 / 5 • Practice Set 01
+        </span>
+
+    </div>
+
+
+    <div class="activity-item">
+
+        <b>Operators</b>
+
+        <span>
+            Currently learning • Programming
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- ACHIEVEMENT -->
+
+<div class="achievement">
+
+    <h2>🏆 Keep Going!</h2>
+
+    <p>
+        You are making steady progress.
+        Complete a few more topics and keep
+        revising regularly to stay ahead of
+        your classroom schedule.
+    </p>
+
+    <a href="syllabus_p3.html" class="button">
+        Continue Studying →
+    </a>
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    StudyMap • B.Sc. Computer Science
+
+    <br><br>
+
+    Study smarter. Know what's next.
+
+</footer>
+
+
+<script type="text/javascript">
+
+function progressMessage()
+{
+    alert("Keep going! Your progress is being tracked.");
+}
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>StudyMap - Variables and Data Types</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #172033;
+}
+
+
+/* NAVBAR */
+
+nav {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #315bea;
+}
+
+nav a {
+    text-decoration: none;
+    color: #172033;
+    margin-left: 35px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #315bea;
+}
+
+
+/* MAIN */
+
+.main {
+    width: 86%;
+    margin: auto;
+    padding: 35px 0 60px;
+}
+
+
+/* BREADCRUMB */
+
+.breadcrumb {
+    font-size: 14px;
+    color: #7b8494;
+    margin-bottom: 25px;
+}
+
+.breadcrumb a {
+    color: #315bea;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+
+/* TOPIC HEADER */
+
+.topic-header {
+    background: linear-gradient(135deg, #315bea, #7048e8);
+    color: white;
+    padding: 35px 40px;
+    border-radius: 22px;
+    position: relative;
+    overflow: hidden;
+}
+
+.topic-header:after {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.08);
+    right: -60px;
+    top: -80px;
+}
+
+.topic-label {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    opacity: 0.85;
+}
+
+.topic-header h1 {
+    font-size: 40px;
+    margin: 12px 0;
+}
+
+.topic-header p {
+    font-size: 16px;
+    opacity: 0.9;
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+
+/* TOPIC INFO */
+
+.topic-info {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.info-box {
+    background-color: rgba(255,255,255,0.15);
+    padding: 10px 16px;
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+
+/* LAYOUT */
+
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+
+/* CARDS */
+
+.card {
+    background-color: white;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.card p {
+    color: #596579;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+
+/* BEFORE CLASS */
+
+.before-class {
+    border-left: 5px solid #7048e8;
+}
+
+.before-items {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.before-item {
+    background-color: #f4f1ff;
+    color: #5b3fc5;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+
+/* CONCEPT */
+
+.concept-point {
+    background-color: #f7f8fc;
+    padding: 16px;
+    border-radius: 10px;
+    margin: 12px 0;
+}
+
+.concept-point strong {
+    color: #315bea;
+}
+
+
+/* CODE */
+
+.code-box {
+    background-color: #172033;
+    color: #dce3f2;
+    padding: 20px;
+    border-radius: 12px;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-x: auto;
+}
+
+
+/* RESOURCE */
+
+.resource {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #e5e8ef;
+    border-radius: 10px;
+    margin: 10px 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.resource:hover {
+    background-color: #f4f6ff;
+    border-color: #315bea;
+    transform: translateX(3px);
+}
+
+.resource-name {
+    font-size: 14px;
+}
+
+.resource-status {
+    color: #315bea;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* BUTTON */
+
+.check-button {
+    background-color: #315bea;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.check-button:hover {
+    background-color: #2448c7;
+}
+
+
+/* SIDE CARD */
+
+.side-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.side-card h3 {
+    margin-top: 0;
+}
+
+
+/* STUDY PROGRESS */
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #edf0f7;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 12px 0;
+}
+
+.progress {
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, #315bea, #7048e8);
+}
+
+
+/* SIDE LINKS */
+
+.side-link {
+    padding: 12px;
+    border-radius: 8px;
+    margin: 6px 0;
+    cursor: pointer;
+    color: #596579;
+    font-size: 14px;
+}
+
+.side-link:hover {
+    background-color: #f1f4ff;
+    color: #315bea;
+}
+
+
+/* COMPLETE BUTTON */
+
+.complete-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #172033;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.complete-button:hover {
+    background-color: #315bea;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    color: #7b8494;
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 850px) {
+
+    nav {
+        padding: 0 25px;
+    }
+
+    nav a {
+        margin-left: 12px;
+    }
+
+    .main {
+        width: 90%;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .topic-header h1 {
+        font-size: 32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        StudyMap
+    </div>
+
+    <div>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="explore_p2.html">
+            Why StudyMap?
+        </a>
+
+        <a href="syllabus_p3.html">
+            Syllabus
+        </a>
+
+        <a href="dashboard_p6.html">
+            Dashboard
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+
+    <!-- BREADCRUMB -->
+
+    <div class="breadcrumb">
+
+        <a href="syllabus_p3.html">
+            Syllabus
+        </a>
+
+        &nbsp; / &nbsp;
+
+        <a href="subject_p4.html">
+            Programming
+        </a>
+
+        &nbsp; / &nbsp;
+
+        Variables and Data Types
+
+    </div>
+
+
+
+    <!-- TOPIC HEADER -->
+
+    <div class="topic-header">
+
+        <div class="topic-label">
+            UNIT 01 &nbsp; | &nbsp; PROGRAMMING
+        </div>
+
+        <h1>
+            Variables and Data Types
+        </h1>
+
+        <p>
+            Understand how information is stored in a program
+            and how different types of data are represented.
+        </p>
+
+
+        <div class="topic-info">
+
+            <div class="info-box">
+                ⏱ 20 min
+            </div>
+
+            <div class="info-box">
+                Beginner
+            </div>
+
+            <div class="info-box">
+                1 Practice Set
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CONTENT -->
+
+    <div class="content">
+
+
+        <!-- LEFT COLUMN -->
+
+        <div>
+
+
+            <!-- BEFORE CLASS -->
+
+            <div class="card before-class">
+
+                <h2>
+                    Before Class
+                </h2>
+
+                <p>
+                    Get a quick understanding of the topic
+                    before it is discussed in your lecture.
+                </p>
+
+
+                <div class="before-items">
+
+                    <div class="before-item">
+                        What is a variable?
+                    </div>
+
+                    <div class="before-item">
+                        What is data?
+                    </div>
+
+                    <div class="before-item">
+                        Why do we need data types?
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LEARN -->
+
+            <div class="card">
+
+                <h2>
+                    Learn
+                </h2>
+
+                <p>
+                    A variable is a named location used to
+                    store a value in a program.
+                </p>
+
+
+                <div class="concept-point">
+
+                    <strong>
+                        Variable
+                    </strong>
+
+                    <br>
+
+                    A variable stores information that can
+                    be used by a program.
+
+                </div>
+
+
+                <div class="concept-point">
+
+                    <strong>
+                        Data Type
+                    </strong>
+
+                    <br>
+
+                    A data type tells us what kind of value
+                    is being stored.
+
+                </div>
+
+
+                <h3>
+                    Example
+                </h3>
+
+                <div class="code-box">
+
+                    name = "Soumya"<br>
+                    age = 18<br>
+                    marks = 85.5
+
+                </div>
+
+
+                <p>
+                    Here, <b>name</b> stores text,
+                    <b>age</b> stores an integer and
+                    <b>marks</b> stores a decimal value.
+                </p>
+
+            </div>
+
+
+
+            <!-- RESOURCES -->
+
+            <div class="card">
+
+                <h2>
+                    Resources
+                </h2>
+
+                <p>
+                    Access all learning resources related
+                    to this topic from one place.
+                </p>
+
+
+                <div class="resource"
+                     onclick="goToResources()">
+
+                    <div class="resource-name">
+                        Faculty Notes
+                    </div>
+
+                    <div class="resource-status">
+                        Open →
+                    </div>
+
+                </div>
+
+
+                <div class="resource"
+                     onclick="goToResources()">
+
+                    <div class="resource-name">
+                        Reference Material
+                    </div>
+
+                    <div class="resource-status">
+                        Open →
+                    </div>
+
+                </div>
+
+
+                <div class="resource"
+                     onclick="goToResources()">
+
+                    <div class="resource-name">
+                        Quick Revision
+                    </div>
+
+                    <div class="resource-status">
+                        Open →
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRACTICE -->
+
+            <div class="card">
+
+                <h2>
+                    Practice
+                </h2>
+
+                <p>
+                    Test your understanding with practice
+                    questions based on this topic.
+                </p>
+
+
+                <button class="check-button"
+                        onclick="goToPractice()">
+
+                    Start Practice →
+
+                </button>
+
+            </div>
+
+
+
+            <!-- EXAM READY -->
+
+            <div class="card">
+
+                <h2>
+                    Exam Ready
+                </h2>
+
+                <p>
+                    Important areas to revise before your
+                    examination:
+                </p>
+
+
+                <div class="concept-point">
+
+                    <strong>
+                        01
+                    </strong>
+
+                    &nbsp; Definition of a variable
+
+                </div>
+
+
+                <div class="concept-point">
+
+                    <strong>
+                        02
+                    </strong>
+
+                    &nbsp; Different data types
+
+                </div>
+
+
+                <div class="concept-point">
+
+                    <strong>
+                        03
+                    </strong>
+
+                    &nbsp; Examples of variables
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- RIGHT COLUMN -->
+
+        <div>
+
+
+            <!-- PROGRESS -->
+
+            <div class="side-card">
+
+                <h3>
+                    Your Progress
+                </h3>
+
+                <div class="progress-bar">
+
+                    <div class="progress">
+                    </div>
+
+                </div>
+
+                <p style="color:#7b8494;font-size:13px;">
+                    Topic progress: 40%
+                </p>
+
+            </div>
+
+
+
+            <!-- TOPIC MENU -->
+
+            <div class="side-card">
+
+                <h3>
+                    Topic Sections
+                </h3>
+
+
+                <div class="side-link"
+                     onclick="goToSection('before')">
+
+                    Before Class
+
+                </div>
+
+
+                <div class="side-link"
+                     onclick="goToSection('learn')">
+
+                    Learn
+
+                </div>
+
+
+                <div class="side-link"
+                     onclick="goToSection('resources')">
+
+                    Resources
+
+                </div>
+
+
+                <div class="side-link"
+                     onclick="goToSection('practice')">
+
+                    Practice
+
+                </div>
+
+
+                <div class="side-link"
+                     onclick="goToSection('exam')">
+
+                    Exam Ready
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NEXT TOPIC -->
+
+            <div class="side-card">
+
+                <h3>
+                    What's Next?
+                </h3>
+
+                <p style="color:#7b8494;font-size:14px;line-height:1.5;">
+
+                    Continue with the next topic after
+                    completing this one.
+
+                </p>
+
+
+                <button class="complete-button"
+                        onclick="completeTopic()">
+
+                    ✓ Mark as Completed
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    StudyMap &nbsp; | &nbsp; B.Sc. Computer Science
+
+</footer>
+
+
+
+<script type="text/javascript">
+
+
+/* OPEN RESOURCES PAGE */
+
+function goToResources()
+{
+    window.location.href = "resources_p7.html";
+}
+
+
+/* OPEN PRACTICE PAGE */
+
+function goToPractice()
+{
+    window.location.href = "practice_p10.html";
+}
+
+
+/* SECTION NAVIGATION */
+
+function goToSection(section)
+{
+
+    if(section == "before")
+    {
+        window.scrollTo(0, 280);
+    }
+
+    else if(section == "learn")
+    {
+        window.scrollTo(0, 480);
+    }
+
+    else if(section == "resources")
+    {
+        window.scrollTo(0, 850);
+    }
+
+    else if(section == "practice")
+    {
+        window.scrollTo(0, 1150);
+    }
+
+    else
+    {
+        window.scrollTo(0, 1500);
+    }
+
+}
+
+
+/* COMPLETE TOPIC */
+
+function completeTopic()
+{
+    alert("Topic marked as completed! Great job.");
+}
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>StudyMap - Quick Revision</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f7fb;
+    color:#222;
+}
+
+/* NAVBAR */
+
+nav{
+    background:white;
+    padding:18px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#3157d5;
+}
+
+.navlinks a{
+    text-decoration:none;
+    color:#444;
+    margin-left:30px;
+    font-size:15px;
+}
+
+.navlinks a:hover{
+    color:#3157d5;
+}
+
+
+/* BREADCRUMB */
+
+.breadcrumb{
+    padding:25px 8%;
+    color:#777;
+    font-size:14px;
+}
+
+.breadcrumb a{
+    color:#3157d5;
+    text-decoration:none;
+}
+
+
+/* MAIN */
+
+.main{
+    width:84%;
+    margin:auto;
+}
+
+
+/* HEADER */
+
+.revision-header{
+    background:linear-gradient(135deg,#3157d5,#7138c8);
+    color:white;
+    padding:40px;
+    border-radius:20px;
+    margin-bottom:30px;
+}
+
+.revision-header h1{
+    font-size:36px;
+    margin:12px 0;
+}
+
+.revision-header p{
+    max-width:700px;
+    line-height:1.6;
+}
+
+.tag{
+    display:inline-block;
+    background:rgba(255,255,255,0.2);
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+
+/* REVISION CARDS */
+
+.revision-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.revision-card{
+    background:white;
+    padding:28px;
+    border-radius:17px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.07);
+}
+
+.revision-card:hover{
+    box-shadow:0 7px 18px rgba(0,0,0,0.12);
+}
+
+.revision-card h2{
+    color:#3157d5;
+    margin-top:0;
+}
+
+.revision-card p{
+    color:#555;
+    line-height:1.6;
+}
+
+
+/* KEY POINTS */
+
+.key-points{
+    margin:0;
+    padding-left:20px;
+}
+
+.key-points li{
+    margin-bottom:12px;
+    line-height:1.5;
+}
+
+
+/* DATA TYPE TABLE */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th{
+    background:#3157d5;
+    color:white;
+    padding:12px;
+    text-align:left;
+}
+
+td{
+    border:1px solid #ddd;
+    padding:12px;
+}
+
+
+/* DEFINITION BOX */
+
+.definition{
+    background:#eef2ff;
+    border-left:5px solid #3157d5;
+    padding:20px;
+    margin-top:15px;
+    line-height:1.6;
+}
+
+
+/* CODE */
+
+.code{
+    background:#17213c;
+    color:white;
+    padding:18px;
+    border-radius:10px;
+    font-family:"Courier New", monospace;
+    line-height:1.7;
+}
+
+
+/* REMEMBER */
+
+.remember{
+    background:#fff8e6;
+    border-left:5px solid #f0a500;
+    padding:20px;
+    margin-top:30px;
+    border-radius:8px;
+}
+
+.remember h2{
+    margin-top:0;
+}
+
+
+/* EXAM BOX */
+
+.exam-box{
+    background:white;
+    padding:30px;
+    margin-top:25px;
+    border-radius:17px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.07);
+}
+
+.exam-box h2{
+    color:#3157d5;
+}
+
+.exam-box li{
+    margin-bottom:12px;
+    line-height:1.5;
+}
+
+
+/* BUTTONS */
+
+.buttons{
+    margin-top:30px;
+    margin-bottom:40px;
+}
+
+.button{
+    display:inline-block;
+    padding:11px 18px;
+    background:#3157d5;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    margin-right:10px;
+    cursor:pointer;
+}
+
+.button:hover{
+    background:#2445b5;
+}
+
+.back{
+    background:#17213c;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+    font-size:14px;
+    margin-top:20px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    nav{
+        padding:18px 25px;
+    }
+
+    .navlinks a{
+        margin-left:10px;
+    }
+
+    .main{
+        width:90%;
+    }
+
+    .revision-grid{
+        grid-template-columns:1fr;
+    }
+
+    .revision-header h1{
+        font-size:28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        StudyMap
+    </div>
+
+    <div class="navlinks">
+
+        <a href="index.html">Home</a>
+
+        <a href="explore_p2.html">Explore</a>
+
+        <a href="syllabus_p3.html">Syllabus</a>
+
+        <a href="dashboard_p6.html">Dashboard</a>
+
+    </div>
+
+</nav>
+
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb">
+
+    <a href="syllabus_p3.html">Syllabus</a>
+    &nbsp;›&nbsp;
+
+    <a href="subject_p4.html">Programming</a>
+    &nbsp;›&nbsp;
+
+    <a href="topic_p5.html">Variables and Data Types</a>
+    &nbsp;›&nbsp;
+
+    Quick Revision
+
+</div>
+
+
+<div class="main">
+
+
+<!-- HEADER -->
+
+<div class="revision-header">
+
+    <span class="tag">
+        ⚡ 5-MINUTE REVISION
+    </span>
+
+    <h1>Variables and Data Types</h1>
+
+    <p>
+        A quick revision sheet containing the most
+        important concepts, definitions and examples
+        you should remember before a test or exam.
+    </p>
+
+</div>
+
+
+<!-- REVISION CARDS -->
+
+<div class="revision-grid">
+
+
+    <!-- DEFINITION -->
+
+    <div class="revision-card">
+
+        <h2>📌 1. Variable</h2>
+
+        <p>
+            A variable is a named location used to
+            store a value in a program.
+        </p>
+
+        <div class="definition">
+
+            <b>Remember:</b><br><br>
+
+            Variable = Name + Stored Value
+
+        </div>
+
+    </div>
+
+
+    <!-- DATA TYPE -->
+
+    <div class="revision-card">
+
+        <h2>📊 2. Data Type</h2>
+
+        <p>
+            A data type specifies the kind of value
+            that a variable can store.
+        </p>
+
+        <ul class="key-points">
+
+            <li>Integer → Whole numbers</li>
+
+            <li>Float → Decimal numbers</li>
+
+            <li>String → Text</li>
+
+            <li>Boolean → True or False</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- TABLE -->
+
+    <div class="revision-card">
+
+        <h2>📝 3. Important Data Types</h2>
+
+        <table>
+
+            <tr>
+
+                <th>Data Type</th>
+
+                <th>Example</th>
+
+            </tr>
+
+            <tr>
+
+                <td>Integer</td>
+
+                <td>25</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Float</td>
+
+                <td>25.5</td>
+
+            </tr>
+
+            <tr>
+
+                <td>String</td>
+
+                <td>"Hello"</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Boolean</td>
+
+                <td>True</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- EXAMPLE -->
+
+    <div class="revision-card">
+
+        <h2>💻 4. Example</h2>
+
+        <div class="code">
+
+name = "Student"<br>
+age = 18<br>
+marks = 85.5<br>
+passed = True
+
+        </div>
+
+        <p>
+            Each variable stores a different type
+            of value.
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<!-- REMEMBER BOX -->
+
+<div class="remember">
+
+    <h2>⭐ Remember These</h2>
+
+    <ul class="key-points">
+
+        <li>
+            Variables are used to store values.
+        </li>
+
+        <li>
+            A variable can contain different types of data.
+        </li>
+
+        <li>
+            Integer stores whole numbers.
+        </li>
+
+        <li>
+            Float stores decimal numbers.
+        </li>
+
+        <li>
+            String stores text.
+        </li>
+
+        <li>
+            Boolean represents True or False.
+        </li>
+
+    </ul>
+
+</div>
+
+
+<!-- EXAM READY -->
+
+<div class="exam-box">
+
+    <h2>🎯 Exam Ready</h2>
+
+    <p>
+        Make sure you can answer these questions
+        without looking at your notes:
+    </p>
+
+    <ol>
+
+        <li>
+            What is a variable?
+        </li>
+
+        <li>
+            What is a data type?
+        </li>
+
+        <li>
+            Explain any four common data types.
+        </li>
+
+        <li>
+            Give examples of variables.
+        </li>
+
+        <li>
+            Why are variables important in programming?
+        </li>
+
+    </ol>
+
+</div>
+
+
+<!-- BUTTONS -->
+
+<div class="buttons">
+
+    <a href="resources_p7.html" class="button back">
+        ← Back to Resources
+    </a>
+
+    <a href="topic_p5.html" class="button">
+        Go to Topic →
+    </a>
+
+    <a href="practice_p10.html" class="button">
+        Practice Questions →
+    </a>
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    StudyMap • B.Sc. Computer Science
+
+    <br><br>
+
+    Study smarter. Know what's next.
+
+</footer>
+
+
+<script type="text/javascript">
+
+function revisionMessage()
+{
+    alert("Quick revision completed!");
+}
+
+</script>
+
+
+</body>
+
+</html>

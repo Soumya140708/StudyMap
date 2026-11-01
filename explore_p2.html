@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>StudyMap - Explore</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f7ff;
+    color:#202438;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#315eea;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:#444;
+    margin-left:25px;
+    font-size:15px;
+}
+
+.navbar a:hover{
+    color:#315eea;
+}
+
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:80px 20px 60px;
+}
+
+.hero h1{
+    font-size:48px;
+    margin:0 0 15px;
+}
+
+.hero h1 span{
+    color:#315eea;
+}
+
+.hero p{
+    font-size:18px;
+    color:#6d7890;
+    max-width:700px;
+    margin:auto;
+    line-height:1.6;
+}
+
+
+/* PROBLEM SECTION */
+
+.section{
+    width:85%;
+    margin:40px auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:12px;
+}
+
+.section-text{
+    text-align:center;
+    color:#70798c;
+    margin-bottom:35px;
+}
+
+
+/* PROBLEM CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.07);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+.number{
+    font-size:14px;
+    color:#315eea;
+    font-weight:bold;
+}
+
+.card h3{
+    font-size:21px;
+    margin:12px 0;
+}
+
+.card p{
+    color:#70798c;
+    line-height:1.6;
+}
+
+
+/* SCATTERED MATERIAL */
+
+.dark-section{
+    background:#101625;
+    color:white;
+    padding:70px 8%;
+    margin-top:70px;
+}
+
+.dark-section h2{
+    text-align:center;
+    font-size:32px;
+}
+
+.dark-section > p{
+    text-align:center;
+    color:#aeb7c9;
+    margin-bottom:35px;
+}
+
+.resources{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    max-width:900px;
+    margin:auto;
+}
+
+.resource{
+    background:#1a2233;
+    padding:22px;
+    border-radius:12px;
+    text-align:center;
+    border:1px solid #29344a;
+}
+
+.resource h3{
+    margin:0 0 8px;
+}
+
+.resource p{
+    color:#aeb7c9;
+    margin:0;
+}
+
+
+/* SOLUTION */
+
+.solution{
+    width:85%;
+    margin:70px auto;
+    text-align:center;
+}
+
+.solution h2{
+    font-size:32px;
+}
+
+.solution > p{
+    color:#70798c;
+    margin-bottom:40px;
+}
+
+.flow{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.flow-box{
+    background:white;
+    padding:25px 15px;
+    border-radius:14px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.06);
+}
+
+.flow-number{
+    width:38px;
+    height:38px;
+    line-height:38px;
+    margin:0 auto 12px;
+    border-radius:50%;
+    background:#e8edff;
+    color:#315eea;
+    font-weight:bold;
+}
+
+.flow-box h3{
+    font-size:17px;
+}
+
+.flow-box p{
+    color:#70798c;
+    font-size:14px;
+}
+
+
+/* FACULTY SECTION */
+
+.faculty{
+    background:#eef2ff;
+    padding:70px 8%;
+    margin-top:70px;
+}
+
+.faculty h2{
+    text-align:center;
+    font-size:32px;
+}
+
+.faculty > p{
+    text-align:center;
+    color:#70798c;
+    margin-bottom:35px;
+}
+
+.faculty-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.faculty-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.06);
+}
+
+.faculty-card span{
+    color:#315eea;
+    font-weight:bold;
+}
+
+.faculty-card h3{
+    margin:12px 0;
+}
+
+.faculty-card p{
+    color:#70798c;
+    line-height:1.5;
+}
+
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    padding:90px 20px;
+}
+
+.cta h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.cta h2 span{
+    color:#315eea;
+}
+
+.cta p{
+    color:#718096;
+    font-size:17px;
+    margin-bottom:30px;
+}
+
+.cta button{
+    background:#315eea;
+    color:white;
+    border:none;
+    padding:17px 32px;
+    border-radius:12px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(49,94,234,0.25);
+}
+
+.cta button:hover{
+    background:#244bd0;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#101625;
+    color:#9ba7bb;
+    padding:35px 7%;
+}
+
+.footer-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer-title{
+    color:white;
+    font-size:23px;
+    font-weight:bold;
+}
+
+.footer-subtitle{
+    margin-top:8px;
+    font-size:14px;
+}
+
+.footer-links a{
+    color:#b7c0d1;
+    text-decoration:none;
+    margin-left:25px;
+}
+
+.footer-links a:hover{
+    color:white;
+}
+
+.copyright{
+    border-top:1px solid #273044;
+    margin-top:30px;
+    padding-top:25px;
+    font-size:13px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .navbar a{
+        margin:0 8px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .resources{
+        grid-template-columns:1fr;
+    }
+
+    .flow{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .faculty-cards{
+        grid-template-columns:1fr;
+    }
+
+    .footer-content{
+        flex-direction:column;
+        gap:20px;
+        align-items:flex-start;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+    <div class="logo">
+        StudyMap
+    </div>
+
+    <div>
+
+        <a href="index.html">Home</a>
+
+        <a href="explore_p2.html">Explore</a>
+
+        <a href="syllabus_p3.html">Syllabus</a>
+
+        <a href="about_p12.html">About</a>
+
+    </div>
+
+</div>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>
+        Why <span>StudyMap?</span>
+    </h1>
+
+    <p>
+        Your syllabus shouldn't feel scattered.
+        StudyMap brings your subjects, topics and
+        learning resources into one clear study path.
+    </p>
+
+</section>
+
+
+<!-- PROBLEM SECTION -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        The problem students face
+    </h2>
+
+    <p class="section-text">
+        Studying becomes difficult when you don't know
+        what to study, where to find it or what comes next.
+    </p>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="number">
+                01
+            </div>
+
+            <h3>
+                Information is scattered
+            </h3>
+
+            <p>
+                Notes, PDFs, textbooks, messages and
+                online resources are often spread across
+                different places.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="number">
+                02
+            </div>
+
+            <h3>
+                You don't always know what's next
+            </h3>
+
+            <p>
+                Different teaching orders can make it
+                difficult to understand which topic you
+                should prepare next.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="number">
+                03
+            </div>
+
+            <h3>
+                Revision becomes harder
+            </h3>
+
+            <p>
+                Before exams, students have to search
+                through multiple sources to find the
+                material they need.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- SCATTERED MATERIAL -->
+
+<section class="dark-section">
+
+    <h2>
+        One subject. Too many places.
+    </h2>
+
+    <p>
+        Your study material may be spread across
+        different platforms and sources.
+    </p>
+
+
+    <div class="resources">
+
+
+        <div class="resource">
+
+            <h3>
+                Classroom
+            </h3>
+
+            <p>
+                Teacher instructions and material
+            </p>
+
+        </div>
+
+
+        <div class="resource">
+
+            <h3>
+                WhatsApp
+            </h3>
+
+            <p>
+                Shared notes and important messages
+            </p>
+
+        </div>
+
+
+        <div class="resource">
+
+            <h3>
+                Textbooks
+            </h3>
+
+            <p>
+                Detailed reference content
+            </p>
+
+        </div>
+
+
+        <div class="resource">
+
+            <h3>
+                Websites
+            </h3>
+
+            <p>
+                Additional explanations and examples
+            </p>
+
+        </div>
+
+
+        <div class="resource">
+
+            <h3>
+                PDFs
+            </h3>
+
+            <p>
+                Notes and study material
+            </p>
+
+        </div>
+
+
+        <div class="resource">
+
+            <h3>
+                Personal Notes
+            </h3>
+
+            <p>
+                Your own important points
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- SOLUTION -->
+
+<section class="solution">
+
+    <h2>
+        One syllabus. One learning path.
+    </h2>
+
+    <p>
+        StudyMap organizes your learning around the syllabus,
+        so you always know where you are and what comes next.
+    </p>
+
+
+    <div class="flow">
+
+
+        <div class="flow-box">
+
+            <div class="flow-number">
+                01
+            </div>
+
+            <h3>
+                Choose Subject
+            </h3>
+
+            <p>
+                Select the subject you want to study.
+            </p>
+
+        </div>
+
+
+        <div class="flow-box">
+
+            <div class="flow-number">
+                02
+            </div>
+
+            <h3>
+                Choose Topic
+            </h3>
+
+            <p>
+                Follow the topics according to the syllabus.
+            </p>
+
+        </div>
+
+
+        <div class="flow-box">
+
+            <div class="flow-number">
+                03
+            </div>
+
+            <h3>
+                Open Resources
+            </h3>
+
+            <p>
+                Access notes, revision and practice material.
+            </p>
+
+        </div>
+
+
+        <div class="flow-box">
+
+            <div class="flow-number">
+                04
+            </div>
+
+            <h3>
+                Learn & Track
+            </h3>
+
+            <p>
+                Study, practise and keep track of your progress.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- FACULTY SECTION -->
+
+<section class="faculty">
+
+    <h2>
+        Less repetitive work. More control.
+    </h2>
+
+    <p>
+        StudyMap is designed to organize learning without
+        creating unnecessary work for faculty.
+    </p>
+
+
+    <div class="faculty-cards">
+
+
+        <div class="faculty-card">
+
+            <span>
+                01
+            </span>
+
+            <h3>
+                Update syllabus
+            </h3>
+
+            <p>
+                Faculty can update the syllabus structure
+                whenever topics or academic content changes.
+            </p>
+
+        </div>
+
+
+        <div class="faculty-card">
+
+            <span>
+                02
+            </span>
+
+            <h3>
+                Add learning resources
+            </h3>
+
+            <p>
+                Relevant notes and study resources can be
+                connected to the appropriate topics.
+            </p>
+
+        </div>
+
+
+        <div class="faculty-card">
+
+            <span>
+                03
+            </span>
+
+            <h3>
+                Students see the update
+            </h3>
+
+            <p>
+                Students can follow the updated learning
+                path without searching through different places.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <h2>
+        Know what you're studying
+        <br>
+        <span>before you start.</span>
+    </h2>
+
+    <p>
+        Explore your B.Sc. Computer Science study path.
+    </p>
+
+
+    <button onclick="goToSyllabus()">
+        Explore Syllabus →
+    </button>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-content">
+
+
+        <div>
+
+            <div class="footer-title">
+                STUDYMAP
+            </div>
+
+            <div class="footer-subtitle">
+                B.Sc. Computer Science Academic Portal
+            </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="explore_p2.html">
+                Explore
+            </a>
+
+            <a href="syllabus_p3.html">
+                Syllabus
+            </a>
+
+            <a href="about_p12.html">
+                About
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 StudyMap • Academic Project
+
+    </div>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function goToSyllabus()
+{
+    window.location.href = "syllabus_p3.html";
+}
+
+</script>
+
+
+</body>
+
+</html>

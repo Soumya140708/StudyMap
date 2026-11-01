@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>StudyMap - About</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f7fb;
+    color:#222;
+}
+
+
+/* NAVBAR */
+
+nav{
+    background:white;
+    padding:18px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#3157d5;
+}
+
+.navlinks a{
+    text-decoration:none;
+    color:#444;
+    margin-left:30px;
+    font-size:15px;
+}
+
+.navlinks a:hover{
+    color:#3157d5;
+}
+
+
+/* BREADCRUMB */
+
+.breadcrumb{
+    padding:25px 8%;
+    color:#777;
+    font-size:14px;
+}
+
+
+/* MAIN */
+
+.main{
+    width:84%;
+    margin:auto;
+}
+
+
+/* HEADER */
+
+.about-header{
+    background:linear-gradient(135deg,#3157d5,#7138c8);
+    color:white;
+    padding:45px;
+    border-radius:20px;
+    margin-bottom:30px;
+}
+
+.about-header h1{
+    font-size:38px;
+    margin:12px 0;
+}
+
+.about-header p{
+    max-width:750px;
+    line-height:1.7;
+    font-size:16px;
+}
+
+
+/* ABOUT CARD */
+
+.about-card{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.07);
+    margin-bottom:25px;
+}
+
+.about-card h2{
+    color:#3157d5;
+    margin-top:0;
+}
+
+.about-card p{
+    color:#555;
+    line-height:1.7;
+}
+
+
+/* PROBLEM GRID */
+
+.problem-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.problem{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.07);
+}
+
+.problem h3{
+    margin-top:10px;
+}
+
+.problem p{
+    color:#666;
+    line-height:1.5;
+}
+
+.icon{
+    font-size:30px;
+}
+
+
+/* HOW IT WORKS */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.step{
+    background:#eef2ff;
+    padding:20px;
+    border-radius:14px;
+    text-align:center;
+}
+
+.step-number{
+    font-size:24px;
+    font-weight:bold;
+    color:#3157d5;
+}
+
+.step p{
+    font-size:14px;
+}
+
+
+/* BENEFITS */
+
+.benefits{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.benefit{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.07);
+}
+
+.benefit h3{
+    color:#3157d5;
+}
+
+.benefit p{
+    color:#666;
+    line-height:1.6;
+}
+
+
+/* DIFFERENCE */
+
+.difference{
+    background:#17213c;
+    color:white;
+    padding:35px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.difference h2{
+    margin-top:0;
+}
+
+.difference p{
+    color:#d7dbea;
+    line-height:1.7;
+}
+
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    margin-top:25px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.07);
+}
+
+.cta h2{
+    color:#3157d5;
+}
+
+.cta p{
+    color:#666;
+    line-height:1.6;
+}
+
+.button{
+    display:inline-block;
+    background:#3157d5;
+    color:white;
+    padding:12px 22px;
+    text-decoration:none;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+.button:hover{
+    background:#2445b5;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:35px;
+    color:#777;
+    font-size:14px;
+    margin-top:30px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    nav{
+        padding:18px 25px;
+    }
+
+    .navlinks a{
+        margin-left:10px;
+    }
+
+    .main{
+        width:90%;
+    }
+
+    .problem-grid{
+        grid-template-columns:1fr;
+    }
+
+    .steps{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .benefits{
+        grid-template-columns:1fr;
+    }
+
+    .about-header h1{
+        font-size:30px;
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        StudyMap
+    </div>
+
+    <div class="navlinks">
+
+        <a href="index.html">Home</a>
+
+        <a href="explore_p2.html">Explore</a>
+
+        <a href="syllabus_p3.html">Syllabus</a>
+
+        <a href="dashboard_p6.html">Dashboard</a>
+
+    </div>
+
+</nav>
+
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb">
+
+    Home &nbsp;›&nbsp; About StudyMap
+
+</div>
+
+
+<div class="main">
+
+
+<!-- HEADER -->
+
+<div class="about-header">
+
+    <h1>About StudyMap</h1>
+
+    <p>
+        StudyMap is a student-focused study platform
+        designed to organize academic resources around
+        the syllabus and help students prepare before
+        a topic is taught in class.
+    </p>
+
+</div>
+
+
+<!-- INTRODUCTION -->
+
+<div class="about-card">
+
+    <h2>🎓 What is StudyMap?</h2>
+
+    <p>
+        StudyMap provides students with a structured path
+        through their academic syllabus. Instead of searching
+        through different platforms for notes, reference
+        material and practice questions, students can find
+        resources connected to the topic they are studying.
+    </p>
+
+    <p>
+        The main idea is simple:
+        <b>Know what comes next, prepare before class,
+        learn during class and revise afterwards.</b>
+    </p>
+
+</div>
+
+
+<!-- PROBLEM -->
+
+<div class="about-card">
+
+    <h2>❓ What Problem Does It Solve?</h2>
+
+    <div class="problem-grid">
+
+
+        <div class="problem">
+
+            <div class="icon">
+                📚
+            </div>
+
+            <h3>Scattered Material</h3>
+
+            <p>
+                Study material can be spread across
+                textbooks, Classroom, messages, PDFs
+                and different websites.
+            </p>
+
+        </div>
+
+
+        <div class="problem">
+
+            <div class="icon">
+                🧭
+            </div>
+
+            <h3>Unclear Study Path</h3>
+
+            <p>
+                Students may not always know which
+                topic they should study next according
+                to their syllabus.
+            </p>
+
+        </div>
+
+
+        <div class="problem">
+
+            <div class="icon">
+                ⏰
+            </div>
+
+            <h3>Last-Minute Preparation</h3>
+
+            <p>
+                Without an organized study path,
+                students may end up preparing topics
+                only before examinations.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- HOW IT WORKS -->
+
+<div class="about-card">
+
+    <h2>⚙️ How StudyMap Works</h2>
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <h3>Choose Semester</h3>
+
+            <p>
+                Select your current semester.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <h3>Select Subject</h3>
+
+            <p>
+                Choose the subject you want to study.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <h3>Select Topic</h3>
+
+            <p>
+                Follow the topics according to
+                the syllabus.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                04
+            </div>
+
+            <h3>Learn & Practice</h3>
+
+            <p>
+                Read resources, revise and practice.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- BENEFITS -->
+
+<div class="about-card">
+
+    <h2>✨ Benefits of StudyMap</h2>
+
+    <div class="benefits">
+
+
+        <div class="benefit">
+
+            <h3>For Students</h3>
+
+            <p>
+                Students can understand what they need
+                to study next, access topic-based resources,
+                revise important concepts and practice
+                questions in one organized platform.
+            </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <h3>For Faculty</h3>
+
+            <p>
+                Faculty can maintain the syllabus structure
+                and connect relevant learning resources
+                without having to repeatedly create separate
+                material for every stage of learning.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- DIFFERENCE -->
+
+<div class="difference">
+
+    <h2>💡 What Makes StudyMap Different?</h2>
+
+    <p>
+        StudyMap is not simply a collection of notes.
+        Its focus is on organizing learning around the
+        syllabus.
+    </p>
+
+    <p>
+        Instead of students asking,
+        <b>"Where can I find the material?"</b>,
+        StudyMap aims to answer,
+        <b>"What should I study next?"</b>
+    </p>
+
+    <p>
+        The syllabus becomes the central roadmap,
+        while notes, references, revision material
+        and practice questions are connected to each
+        topic.
+    </p>
+
+</div>
+
+
+<!-- FUTURE -->
+
+<div class="about-card">
+
+    <h2>🚀 Future Scope</h2>
+
+    <p>
+        StudyMap can be expanded beyond B.Sc. Computer
+        Science to support other courses and departments.
+        Future versions could include student accounts,
+        dynamic progress tracking, faculty management,
+        notifications and additional learning resources.
+    </p>
+
+</div>
+
+
+<!-- CTA -->
+
+<div class="cta">
+
+    <h2>Ready to Start Learning?</h2>
+
+    <p>
+        Follow your syllabus, discover your next topic
+        and build a better study routine with StudyMap.
+    </p>
+
+    <a href="syllabus_p3.html" class="button">
+        Explore Syllabus →
+    </a>
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    StudyMap • B.Sc. Computer Science
+
+    <br><br>
+
+    Study smarter. Know what's next.
+
+</footer>
+
+
+<script type="text/javascript">
+
+function aboutMessage()
+{
+    alert("Welcome to StudyMap!");
+}
+
+</script>
+
+
+</body>
+
+</html>

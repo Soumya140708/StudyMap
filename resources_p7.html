@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>StudyMap - Learning Resources</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f5f7ff;
+    color:#20243a;
+}
+
+/* NAVBAR */
+
+nav{
+    background:white;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#4f46e5;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#444;
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:#4f46e5;
+}
+
+
+/* BREADCRUMB */
+
+.breadcrumb{
+    padding:25px 8% 10px;
+    color:#777;
+    font-size:14px;
+}
+
+.breadcrumb a{
+    color:#4f46e5;
+    text-decoration:none;
+}
+
+
+/* HEADER */
+
+.resource-header{
+    margin:20px 8%;
+    padding:45px;
+    border-radius:22px;
+    color:white;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+}
+
+.resource-header p{
+    font-size:14px;
+    margin-bottom:12px;
+    opacity:0.9;
+}
+
+.resource-header h1{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.resource-header span{
+    font-size:15px;
+    opacity:0.9;
+}
+
+
+/* FILTER */
+
+.filter-section{
+    text-align:center;
+    margin:30px 8%;
+}
+
+.filter-section button{
+    padding:10px 18px;
+    margin:5px;
+    border:none;
+    border-radius:20px;
+    background:white;
+    color:#4f46e5;
+    cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.filter-section button:hover{
+    background:#4f46e5;
+    color:white;
+}
+
+
+/* RESOURCE GRID */
+
+.resources{
+    width:84%;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+
+/* RESOURCE CARD */
+
+.resource-card{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.07);
+    transition:0.3s;
+}
+
+.resource-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+.resource-icon{
+    width:55px;
+    height:55px;
+    border-radius:15px;
+    background:#eef2ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.resource-card h2{
+    font-size:21px;
+    margin-bottom:10px;
+}
+
+.resource-card p{
+    color:#666;
+    line-height:1.6;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.status{
+    display:inline-block;
+    background:#ecfdf5;
+    color:#059669;
+    padding:6px 12px;
+    border-radius:15px;
+    font-size:12px;
+    margin-bottom:18px;
+}
+
+.resource-card button{
+    display:block;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#4f46e5;
+    color:white;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.resource-card button:hover{
+    background:#3730a3;
+}
+
+
+/* TIP */
+
+.tip{
+    width:84%;
+    margin:45px auto;
+    padding:25px;
+    background:#eef2ff;
+    border-radius:16px;
+    text-align:center;
+}
+
+.tip h3{
+    color:#4f46e5;
+    margin-bottom:8px;
+}
+
+.tip p{
+    color:#555;
+    font-size:14px;
+}
+
+
+/* BACK BUTTON */
+
+.back{
+    text-align:center;
+    margin:35px;
+}
+
+.back a{
+    text-decoration:none;
+    color:#4f46e5;
+    font-weight:bold;
+}
+
+
+/* FOOTER */
+
+footer{
+    margin-top:50px;
+    background:#17172b;
+    color:white;
+    text-align:center;
+    padding:25px;
+    font-size:13px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:700px){
+
+    .nav-links{
+        gap:10px;
+    }
+
+    .resource-header{
+        padding:30px;
+    }
+
+    .resource-header h1{
+        font-size:28px;
+    }
+
+    .resources{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        StudyMap
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="explore_p2.html">
+            Explore
+        </a>
+
+        <a href="syllabus_p3.html">
+            Syllabus
+        </a>
+
+        <a href="dashboard_p6.html">
+            Dashboard
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb">
+
+    <a href="syllabus_p3.html">
+        Syllabus
+    </a>
+
+    &nbsp;›&nbsp;
+
+    <a href="subject_p4.html">
+        Programming
+    </a>
+
+    &nbsp;›&nbsp;
+
+    <a href="topic_p5.html">
+        Variables and Data Types
+    </a>
+
+    &nbsp;›&nbsp;
+
+    Resources
+
+</div>
+
+
+<!-- HEADER -->
+
+<section class="resource-header">
+
+    <p>
+        UNIT 01 • PROGRAMMING
+    </p>
+
+    <h1>
+        Learning Resources
+    </h1>
+
+    <span>
+        Everything you need for Variables and Data Types,
+        organized in one place.
+    </span>
+
+</section>
+
+
+<!-- FILTER -->
+
+<div class="filter-section">
+
+    <button onclick="showAll()">
+        All Resources
+    </button>
+
+    <button onclick="showFaculty()">
+        Faculty Notes
+    </button>
+
+    <button onclick="showReference()">
+        Reference
+    </button>
+
+    <button onclick="showRevision()">
+        Quick Revision
+    </button>
+
+    <button onclick="showPractice()">
+        Practice
+    </button>
+
+</div>
+
+
+<!-- RESOURCES -->
+
+<section class="resources">
+
+
+    <!-- FACULTY NOTES -->
+
+    <div class="resource-card" id="faculty">
+
+        <div class="resource-icon">
+            📘
+        </div>
+
+        <h2>
+            Faculty Notes
+        </h2>
+
+        <p>
+            Read the notes provided for the topic
+            and understand the important concepts
+            before or after the lecture.
+        </p>
+
+        <span class="status">
+            Available
+        </span>
+
+        <button onclick="window.location.href='faculty_notes_p8.html'">
+
+            Open Faculty Notes →
+
+        </button>
+
+    </div>
+
+
+    <!-- REFERENCE -->
+
+    <div class="resource-card" id="reference">
+
+        <div class="resource-icon">
+            📚
+        </div>
+
+        <h2>
+            Reference Material
+        </h2>
+
+        <p>
+            Additional study material that can help
+            you understand the topic more clearly
+            and explore concepts further.
+        </p>
+
+        <span class="status">
+            Available
+        </span>
+
+        <button onclick="openReference()">
+
+            Open Reference Material →
+
+        </button>
+
+    </div>
+
+
+    <!-- REVISION -->
+
+    <div class="resource-card" id="revision">
+
+        <div class="resource-icon">
+            ⚡
+        </div>
+
+        <h2>
+            Quick Revision
+        </h2>
+
+        <p>
+            Quickly revise definitions, important
+            points and examples before a test or
+            examination.
+        </p>
+
+        <span class="status">
+            Available
+        </span>
+
+        <button onclick="window.location.href='revision_p9.html'">
+
+            Quick Revision →
+
+        </button>
+
+    </div>
+
+
+    <!-- PRACTICE -->
+
+    <div class="resource-card" id="practice">
+
+        <div class="resource-icon">
+            ✏️
+        </div>
+
+        <h2>
+            Practice Questions
+        </h2>
+
+        <p>
+            Test your understanding with interactive
+            questions and check how well you know
+            the topic.
+        </p>
+
+        <span class="status">
+            Available
+        </span>
+
+        <button onclick="window.location.href='practice_p10.html'">
+
+            Start Practice →
+
+        </button>
+
+    </div>
+
+
+</section>
+
+
+<!-- TIP -->
+
+<div class="tip">
+
+    <h3>
+        StudyMap Tip
+    </h3>
+
+    <p>
+        Start with Faculty Notes, revise the topic,
+        and then test yourself with Practice Questions.
+    </p>
+
+</div>
+
+
+<!-- BACK -->
+
+<div class="back">
+
+    <a href="topic_p5.html">
+        ← Back to Topic
+    </a>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    StudyMap • Study smarter. Know what's next.
+
+</footer>
+
+
+<script>
+
+
+/* SHOW ALL */
+
+function showAll()
+{
+    document.getElementById("faculty").style.display="block";
+
+    document.getElementById("reference").style.display="block";
+
+    document.getElementById("revision").style.display="block";
+
+    document.getElementById("practice").style.display="block";
+}
+
+
+/* SHOW FACULTY */
+
+function showFaculty()
+{
+    document.getElementById("faculty").style.display="block";
+
+    document.getElementById("reference").style.display="none";
+
+    document.getElementById("revision").style.display="none";
+
+    document.getElementById("practice").style.display="none";
+}
+
+
+/* SHOW REFERENCE */
+
+function showReference()
+{
+    document.getElementById("faculty").style.display="none";
+
+    document.getElementById("reference").style.display="block";
+
+    document.getElementById("revision").style.display="none";
+
+    document.getElementById("practice").style.display="none";
+}
+
+
+/* SHOW REVISION */
+
+function showRevision()
+{
+    document.getElementById("faculty").style.display="none";
+
+    document.getElementById("reference").style.display="none";
+
+    document.getElementById("revision").style.display="block";
+
+    document.getElementById("practice").style.display="none";
+}
+
+
+/* SHOW PRACTICE */
+
+function showPractice()
+{
+    document.getElementById("faculty").style.display="none";
+
+    document.getElementById("reference").style.display="none";
+
+    document.getElementById("revision").style.display="none";
+
+    document.getElementById("practice").style.display="block";
+}
+
+
+/* REFERENCE MESSAGE */
+
+function openReference()
+{
+    alert("Reference material will be added here.");
+}
+
+
+</script>
+
+</body>
+</html>
